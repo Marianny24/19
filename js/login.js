@@ -1,5 +1,5 @@
 // Seleciona o botão de login pelo ID e adiciona um evento de clique para chamar a função autenticar
-const botaoLogin = document.querySelector('#entrar');
+const botaoLogin = document.querySelector('#Entrar');
 botaoLogin.addEventListener('click', autenticar);
 
 // Seleciona a área onde as mensagens de status serão exibidas
@@ -20,7 +20,7 @@ async function autenticar(e) {
   };
 
   // Define a URL da API que processará a autenticação
-  const url = "https://24-api-a-five.vercel.app/login";
+  const url = "24-api-a-five.vercel.app/login";
 
   try {
     // Envia uma requisição HTTP POST para a API com os dados do usuário
@@ -44,7 +44,8 @@ async function autenticar(e) {
     localStorage.setItem('jwt', data.token);
 
     // Exibe uma mensagem de sucesso na interface do usuário em verde juntamente com o Token gerado
-    window.location.href = 'home.html';
+    areaMensagem.style = "color:green";
+    areaMensagem.innerHTML = "Usuário Autenticado com Sucesso! <br> Token: " + data.token;
 
   } catch (error) {
     // Exibe uma mensagem de erro na interface do usuário em vermelho
