@@ -4,7 +4,7 @@ const respAutor = document.getElementById('respAutor');
 
 botaoAutor.addEventListener('click', pegarInformacao);
 
-const urlBase = "https://24-api-a-five.vercel.app/login";
+const urlBase = "https://24-api-a-five.vercel.app/";
 
 async function pegarInformacao() {
 
