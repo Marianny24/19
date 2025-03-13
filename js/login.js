@@ -1,11 +1,5 @@
-//js/main.js
-const botaoAutor = document.getElementById('botaoAutor');
-const respAutor = document.getElementById('respAutor');
-
-botaoAutor.addEventListener('click', pegarInformacao);
-
-const urlBase = "// Seleciona o botão de login pelo ID e adiciona um evento de clique para chamar a função autenticar
-const botaoLogin = document.querySelector('#id_do_botao_Entrar_do_formulario');
+// Seleciona o botão de login pelo ID e adiciona um evento de clique para chamar a função autenticar
+const botaoLogin = document.querySelector('#entrar');
 botaoLogin.addEventListener('click', autenticar);
 
 // Seleciona a área onde as mensagens de status serão exibidas
@@ -21,12 +15,12 @@ async function autenticar(e) {
 
   // Coleta os valores digitados nos campos de email e senha
   const dados = {
-    email: document.getElementById('id_do_input_do_email').value,
-    senha: document.getElementById('id_do_input_do_senha').value
+    email: document.getElementById('email').value,
+    senha: document.getElementById('senha').value
   };
 
   // Define a URL da API que processará a autenticação
-  const url = "URL_DO_SEU_BACK_END_NA_VERCEL/login";
+  const url = "https://24-api-a-five.vercel.app/login";
 
   try {
     // Envia uma requisição HTTP POST para a API com os dados do usuário
@@ -57,24 +51,5 @@ async function autenticar(e) {
     // Exibe uma mensagem de erro na interface do usuário em vermelho
     areaMensagem.style = "color:red";
     areaMensagem.innerHTML = error;
-  }
-}/";
-
-async function pegarInformacao() {
-
-  respAutor.innerText = "Aguarde... "
-
-  try {
-    const response = await fetch(urlBase);
-
-    if (!response.ok) {
-      throw new Error("Erro na requisição: " + response.status);
-    }
-
-    const data = await response.json();
-    respAutor.innerText = data.nome;
-  } catch (error) {
-    console.error("Erro:", error);
-    respAutor.innerText = `Erro: ${error}`;
   }
 }
