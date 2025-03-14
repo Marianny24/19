@@ -20,7 +20,7 @@ async function autenticar(e) {
   };
 
   // Define a URL da API que processará a autenticação
-  const url = "24-api-a-five.vercel.app/login";
+  const url = "https://24-api-a-five.vercel.app/login";
 
   try {
     // Envia uma requisição HTTP POST para a API com os dados do usuário
