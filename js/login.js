@@ -1,5 +1,5 @@
 // Seleciona o botão de login pelo ID e adiciona um evento de clique para chamar a função autenticar
-const botaoLogin = document.querySelector('#Entrar');
+const botaoLogin = document.querySelector('#entrar');
 botaoLogin.addEventListener('click', autenticar);
 
 // Seleciona a área onde as mensagens de status serão exibidas
@@ -7,6 +7,7 @@ const areaMensagem = document.getElementById('msg');
 
 // Função assíncrona responsável por autenticar o usuário
 async function autenticar(e) {
+
 	// Impede que o formulário recarregue a página ao enviar os dados
   e.preventDefault(); 
 
@@ -25,7 +26,7 @@ async function autenticar(e) {
   try {
     // Envia uma requisição HTTP POST para a API com os dados do usuário
     const response = await fetch(url, {
-      method: 'POST', // Define o método HTTP como POST para envio de dados
+      method: 'POST', 
       headers: {
         'Content-Type': 'application/json' // Define que o conteúdo enviado será em formato JSON
       },
@@ -45,7 +46,7 @@ async function autenticar(e) {
 
     // Exibe uma mensagem de sucesso na interface do usuário em verde juntamente com o Token gerado
     window.location.href = 'home.html';
-    
+
   } catch (error) {
     // Exibe uma mensagem de erro na interface do usuário em vermelho
     areaMensagem.style = "color:red";
